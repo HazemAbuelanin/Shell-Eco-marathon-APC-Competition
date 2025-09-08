@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Lidar Node (delay 2s) -->
+    <node pkg="shell_simulation" type="lidar_node.py" name="lidar" output="screen"
+          launch-prefix="bash -c 'sleep 2; exec $0 $@'">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+
+    <!-- Path Segment Publisher Node (delay 4s) -->
+    <node pkg="shell_simulation" type="path_tracker_node.py" name="path_segment_publisher" output="screen"
+          launch-prefix="bash -c 'sleep 4; exec $0 $@'">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+        <param name="segment_size" value="60" />
+        <param name="min_waypoints" value="10" />
+        <param name="offtrack_threshold" value="10.0" />
+    </node>
+
+    <!-- Behavior Planner Node (delay 6s) -->
+    <node pkg="shell_simulation" type="behavior_planner_node.py" name="behavior_planner" output="screen"
+          launch-prefix="bash -c 'sleep 6; exec $0 $@'">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+
+    <!-- Controller Node (delay 8s) -->
+    <node pkg="shell_simulation" type="controller_node.py" name="controller_node" output="screen"
+          launch-prefix="bash -c 'sleep 8; exec $0 $@'">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+
+    <!-- Planner Perception Node (delay 10s) -->
+    <node pkg="shell_simulation" type="planner_perception_node.py" name="planner_perception" output="screen"
+          launch-prefix="bash -c 'sleep 10; exec $0 $@'">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+
+    <!-- logger Node (delay 10s) -->
+    <node pkg="shell_simulation" type="logger_node.py" name="logger" output="screen"
+          launch-prefix="bash -c 'sleep 12; exec $0 $@'">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+</launch>

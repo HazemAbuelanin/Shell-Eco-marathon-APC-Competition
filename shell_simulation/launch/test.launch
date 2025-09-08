@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- lidar Node -->
+    <node pkg="shell_simulation" type="lidar_node.py" name="lidar_node" output="screen">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+
+    <!-- perception planner Node -->
+    <node pkg="shell_simulation" type="planner_perception_node.py" name="planner_perception_node" output="screen">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+</launch> 

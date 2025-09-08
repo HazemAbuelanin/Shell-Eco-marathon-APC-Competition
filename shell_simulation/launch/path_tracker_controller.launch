@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Path Segment Publisher Node -->
+    <node pkg="shell_simulation" type="path_tracker_node.py" name="path_segment_publisher" output="screen">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+        <param name="segment_size" value="40" />
+        <param name="min_waypoints" value="10" />
+        <param name="offtrack_threshold" value="10.0" />
+    </node>
+
+    <!-- Controller Node -->
+    <node pkg="shell_simulation" type="controller_node.py" name="controller_node" output="screen">
+        <param name="package_share_dir" value="$(find shell_simulation)" />
+    </node>
+</launch> 
