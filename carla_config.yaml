@@ -1,0 +1,35 @@
+# CARLA Simulation Configuration
+# This file holds all the main arguments to configure and set up your CARLA environment.
+# NOTE: Setting any of these parameters on the command line will overwrite the arguments set here.
+
+/**:
+  ros__parameters:
+
+    server_connection:
+      host: "localhost"           # (Default: localhost)  IP of the CARLA server
+      port: 2000                  # (Default: 2000)  Carla server port
+      passive: False              # (Default: False)  Toggles passive mode for the simulation
+      synchronous_mode: True      # (Default: True)  Toggles the simulation from synchronous to asynchronous mode
+      synchronous_mode_wait_for_vehicle_control_command: False # (Default: False)
+      fixed_delta_seconds: 0.05   # (Default: 0.05)
+      timeout: 10.0               # (Default: 10.0)  Server timeout limit in seconds
+
+    server_environment:
+      map: "Town01_Opt"           # (Default: Town05_Opt)  Map to load on startup (either a predefined CARLA town (e.g. 'Town03_Opt'), or a OpenDRIVE map file)')
+      map_layers:                 # Layers of the map that can be added or removed to improve performance (Note: Only works with "Opt" maps)
+        all: False                # (Default: False)  Set to True to load all map layers regardless of values below
+        decals: False             # (Default: False)
+        foliage: True             # (Default: True)
+        parked_vehicles: True    # (Default: False)
+        particles: False          # (Default: False)
+        walls: True               # (Default: True)
+
+      traffic_generation:
+        number_of_vehicles: 30     # (Default: 0)  Number of other vehicles to spawn in the simulations
+        spawn_radius: 100.0       # (Default: 100.0)  Spawn radius from ego vehicle in meters
+        seed: 0                   # (Default: 0)  Set random device seed and deterministic mode for Traffic Manager
+
+    ego_vehicle:
+      role_name: "ego_vehicle"    # (Default: ego_vehicle)  Role name of the ego vehicle
+      spawn_point_ego_vehicle: "280.363739,-133.306351,1,0,0,0" # (Default: 0,-2.5,1,0,0,0)  "x,y,z,roll,pitch,yaw" map coordinates to spawn the vehicle (Use "None" for random spawn)
+      spawn_sensors_only: False   # (Default: False)  Set to true to only spawn the vehicle sensors
