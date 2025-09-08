@@ -10,7 +10,7 @@ The challenge was to autonomously navigate through **14 target waypoints** while
 - Ensuring **collision-free** navigation.  
 - Maintaining **safe and legal driving behavior**.  
 
-![Alt text](images/Shell Paper.drawio.png)
+![Alt text](images/Architecture.png)
 ---
 
 ## 📂 Project Structure  
