@@ -10,8 +10,7 @@ The challenge was to autonomously navigate through **14 target waypoints** while
 - Ensuring **collision-free** navigation.  
 - Maintaining **safe and legal driving behavior**.  
 
-Our approach combined **dynamic programming for optimal waypoint traversal**, a robust perception stack with **LiDAR–camera fusion**, and an **adaptive planning and control framework** designed for energy efficiency.  
-
+![Alt text](Shell Paper.drawio)
 ---
 
 ## 📂 Project Structure  
