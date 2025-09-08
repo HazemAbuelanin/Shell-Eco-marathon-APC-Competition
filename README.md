@@ -96,6 +96,7 @@ The **Frenet planner** is activated only during overtakes to save computation, o
 - Achieved **2nd place globally** with this stack.  
 - Strong balance of **classical perception algorithms** and **lightweight planning/control** methods.  
 - Focused on **energy efficiency** while preserving safety.  
+[See results](https://www.shellecomarathon.com/2025-programme/autonomous-programming-competition.html)
 
 ---
 
