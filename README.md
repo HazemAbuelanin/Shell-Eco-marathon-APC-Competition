@@ -92,7 +92,92 @@ The **Frenet planner** is activated only during overtakes to save computation, o
 
 ---
 
-## 🚀 Key Highlights  
+##  Key Highlights  
 - Achieved **2nd place globally** with this stack.  
 - Strong balance of **classical perception algorithms** and **lightweight planning/control** methods.  
 - Focused on **energy efficiency** while preserving safety.  
+
+---
+
+## ⚙️ Build and Run Instructions (Catkin Tools)  
+
+This repository is designed to be built within a **ROS Catkin workspace**. Place the repo inside `src/` of your catkin workspace, then follow these steps:  
+
+### 1. Initialize catkin workspace  
+```bash
+catkin init
+```
+
+### 2. Configure to use install space  
+```bash
+catkin config --install
+```
+
+### 3. Set build options  
+```bash
+catkin config --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSETUPTOOLS_DEB_LAYOUT=OFF
+```
+
+### 4. Install dependencies (from workspace root)  
+```bash
+rosdep update
+rosdep install . -q -y --from-paths -i
+```
+
+### 5. Build the workspace  
+```bash
+catkin build
+```
+
+### 6. Source installed environment  
+```bash
+source install/setup.bash
+```
+
+### 7. Run the main launch file  
+```bash
+roslaunch shell_simulation shell_simulation.launch
+```
+
+---
+
+## 🛠 Alternative Build (catkin_make)  
+
+If you are using **catkin_make**:  
+
+```bash
+catkin_make
+source devel/setup.bash
+roslaunch shell_simulation shell_simulation.launch
+```
+
+---
+
+## 🔗 External Dependencies  
+
+Before running, ensure you have the Shell Eco-marathon CARLA + ROS bridge docker environment installed:  
+
+- [SEM-APC Student Docker Environment](https://github.com/swri-robotics/sem-apc-student-docker-environment)  
+- [SEM-APC Example Project](https://github.com/swri-robotics/sem-apc-example-project)  
+
+### Requirements  
+- **Ubuntu 22.04 (preferred)**  
+- Docker environment above installed and running  
+- `carla_config.yaml` must be edited to match the one provided in this repository  
+
+### Launch Order  
+1. Start the **simulation environment** (CARLA + shell ROS bridge):  
+```bash
+roslaunch carla_shell_bridge main.launch
+```  
+
+2. Run this software stack:  
+```bash
+roslaunch shell_simulation shell_simulation.launch
+```  
+
+---
+
+## 📌 Notes  
+- Ensure that `carla_config.yaml` matches the configuration in this repo before starting.  
+- Always launch the CARLA bridge before starting simulation nodes.  
