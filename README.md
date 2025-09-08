@@ -1,4 +1,4 @@
-# The Software Stack That Achieved Global Second Place at the Shell Eco-marathon APC
+# The Software Stack That Achieved Global Second Place at the Shell Eco-marathon APC 2025
 
 This repository contains the complete software system developed for the **Shell Eco-marathon Autonomous Programming Competition 2025**, where it secured **global second place**. The system was implemented and tested on the **CARLA Simulator**, integrating classical perception, planning, and control methods with efficiency-optimized behavior planning.  
 
