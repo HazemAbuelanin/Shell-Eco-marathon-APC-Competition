@@ -178,6 +178,7 @@ roslaunch shell_simulation shell_simulation.launch
 
 ---
 
+
 ## 📌 Notes  
 - Ensure that `carla_config.yaml` matches the configuration in this repo before starting.  
 - Always launch the CARLA bridge before starting simulation nodes.  
